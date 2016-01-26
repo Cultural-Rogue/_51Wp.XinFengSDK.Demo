@@ -97,6 +97,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="project.json" />
+    <None Include="新峰游戏联运SDK开发指南-UWP版.docx" />
+    <None Include="爱应用支付服务端回调通知开发指南.doc" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
