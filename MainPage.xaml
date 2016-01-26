@@ -1,0 +1,111 @@
+﻿<Page
+    x:Class="XF_Sdk_UWP_Demo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:XF_Sdk_UWP_Demo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Grid Name="grid_Root" Tag="Cococ和U3D游戏处理方式：找到MainPage.xaml页面，在所有元素的最外层嵌一个Grid容器空间" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid  Width="360" >
+            <ScrollViewer>
+            <StackPanel>
+                <TextBlock Margin="10 10 10 0" Text="新锋联运SDK使用示例(统计.登录.支付)" FontSize="18"></TextBlock>
+                <TextBlock Foreground="Red" Text="1.统计相关：" Margin="10 10 0 0"></TextBlock>
+                <TextBlock Text="在App.xaml.cs文件里的OnLaunched方法里调用_51Wp.XinFengSDK.UWP.Statistics.StatisticsManager.Action()方法" TextWrapping="Wrap" Margin="10 10 0 0"></TextBlock>
+
+                <TextBlock Foreground="Red" Text="2.登录相关：" Margin="10 10 0 0"></TextBlock>
+                <StackPanel Margin="0 10 0 0" Width="320" Orientation="Horizontal" HorizontalAlignment="Center">
+
+                    <Button Width="100"  Margin="5 0 0 0"
+                    Height="40"
+                    Click="Button_Click_1"
+                    Content="快捷登入" />
+                    <Button Width="100"  Margin="5 0 0 0"
+                    Height="40"
+                    Click="Button_Click_2"
+                    Content="切换帐号" />
+                    <Button Width="100" Margin="5 0 0 0"
+                    Height="40"
+                    Click="Button_Click_3"
+                    Content="隐藏浮层" />
+                </StackPanel>
+                <TextBlock Foreground="Red" Text="3.支付相关:" Margin="10 10 0 0"></TextBlock>
+                <Grid >
+                    <Grid VerticalAlignment="Top" HorizontalAlignment="Center" Background="Transparent">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="150"/>
+                            <RowDefinition Height="250"/>
+
+                        </Grid.RowDefinitions>
+
+                        <!--TitlePanel 包含应用程序的名称和页标题-->
+
+                        <!--ContentPanel - 在此处放置其他内容-->
+                        <Grid x:Name="ContentPanel"  Grid.Row="1"  Margin="12,10,12,0">
+                            <StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                    <TextBlock TextAlignment="Center"
+                               Height="30"
+                               Width="100">商品编号：</TextBlock>
+                                    <TextBox Width="350"
+                             Name="goodsId"
+                             Text="821500336003"></TextBox>
+
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock TextAlignment="Center"
+                               Height="30"
+                               Width="100">玩家类型：</TextBlock>
+                                    <RadioButton GroupName="playerType"
+                                 Name="CheckPlayer"
+                                 IsChecked="true"
+                                 Checked="RadioButton_Checked_1">注册用户</RadioButton>
+                                    <RadioButton GroupName="playerType"
+                                 Name="NoCheckPlayer"
+                                 Checked="RadioButton_Checked_2">匿名用户</RadioButton>
+
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock TextAlignment="Center"
+                               Height="30"
+                               Width="100">玩家帐号：</TextBlock>
+                                    <TextBox Width="350"
+                             Name="playerid"
+                             Text="Player赣D50F00"></TextBox>
+
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal"/>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock TextAlignment="Center"
+                               Height="30"
+                               Width="100">备用字段：</TextBlock>
+                                    <TextBox Width="350"
+                             Name="AlternateField" FontSize="18"
+                             Text="自定义字段(json/xml,长度最大1024)"></TextBox>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock TextAlignment="Center"
+                               Height="30"
+                               Width="100">游戏服区：</TextBlock>
+                                    <TextBox Width="350"
+                             Name="GameServer"
+                             Text="江西吉安一区"></TextBox>
+
+                                </StackPanel>
+                                <Button Height="30" Margin="0 10 0 0" Width="300" HorizontalAlignment="Center" Click="Button_Click_11">确认支付</Button>
+                            </StackPanel>
+
+                        </Grid>
+                            <ListBox Margin="12 20 12 40" Grid.Row="0" Name="GoodsList" SelectionChanged="GoodsList_SelectionChanged">
+                        </ListBox>
+                        <Button Height="30" Width="300" HorizontalAlignment="Center" VerticalAlignment="Bottom" Click="Button_Click_22" Content="获取商品列表"></Button>
+                    </Grid>
+
+                </Grid>
+
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+    </Grid>
+</Page>
