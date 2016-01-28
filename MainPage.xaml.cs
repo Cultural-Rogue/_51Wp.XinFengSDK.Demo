@@ -36,11 +36,14 @@ namespace XF_Sdk_UWP_Demo
             AccountManager.AccountInit("328", "500375", grid_Root, true, 0);
             //初始化支付SDK
             _51Wp.XinFengSDK.UWP.Pay.PaymentManager.Initialize("328", "500375", grid_Root);
-
+            //支付结果回调事件
+            _51Wp.XinFengSDK.UWP.Pay.PaymentManager.PaymentResultCallback += PaymentManager_PaymentResultCallback;
             //登录结果回调事件
             AccountSdkCallBack();
 
         }
+
+     
 
 
         #region 登录相关的操作
